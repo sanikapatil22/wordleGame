@@ -2,12 +2,12 @@ import React from 'react';
 import Guess from '../Guess';
 import {NUM_OF_GUESSES_ALLOWED} from '../../constants';
 import { range } from '@/src/utils';
-function GuessResult({guesses=[]}) {
+function GuessResult({guesses=[], answer}) {
   return (
   <div>
     <div className="guess-results">
       {range(NUM_OF_GUESSES_ALLOWED).map((num) => (
-        <Guess key={num} value={guesses[num]} />
+        <Guess key={num} value={guesses[num]} answer={answer} />
       ))}
     </div>
   </div>
@@ -17,19 +17,3 @@ function GuessResult({guesses=[]}) {
 export default GuessResult;
 
 
-// import React from 'react';
-// import Guess from '../Guess';
-// import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
-// import { range } from '@/src/utils';
-
-// function GuessResult({ guesses = [] }) {
-//   return (
-//     <div className="guess-results">
-//       {range(NUM_OF_GUESSES_ALLOWED).map((num) => (
-//         <Guess key={num} value={guesses[num]} />
-//       ))}
-//     </div>
-//   );
-// }
-
-// export default GuessResult;
