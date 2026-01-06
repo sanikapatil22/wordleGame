@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 
-function Guess({handleSubmitGuess}) {
+function GuessInput({gameStatus, handleSubmitGuess}) {
   const [tentativeGuess, setTentativeGuess] = React.useState('');
   function handleSubmit(event) {
     event.preventDefault();
@@ -19,7 +19,9 @@ function Guess({handleSubmitGuess}) {
     <form onSubmit={handleSubmit} className='guess-input-wrapper' >
       <label htmlFor='guess-input'>Enter guess: </label>
       <input 
-      required maxLength={5} minLength={5}
+      required 
+      disabled = {gameStatus !== 'running'}
+      maxLength={5} minLength={5}
       value={tentativeGuess}
       onChange={(event)=> setTentativeGuess(event.target.value.toUpperCase()) } 
       id='guess-input' 
@@ -31,4 +33,4 @@ function Guess({handleSubmitGuess}) {
   )
 }
 
-export default Guess;
+export default GuessInput;

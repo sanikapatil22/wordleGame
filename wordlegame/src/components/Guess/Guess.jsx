@@ -4,11 +4,11 @@
 
 // function Cell({letter, status}) {
 //   const className = status ? `cell ${status}` : 'cell';
-//   return <div>
+//   return ()
 //     <span className={className}>
 //       {letter}
 //         </span>
-//   </div>;
+//   );
 // }
 // function Guess({value, answer}) {
 //   const result = checkGuess(value, answer);;
